@@ -1,1 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    font-size: 16px;
+}
+
+.container {
+    display: flex;
+    flex-basis: 100vw;
+    height: 95%;
+    padding: 12px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    display: flex;
+    outline: none;
+    padding: 12px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    font-weight: 600;
+    color: darkslategrey;
+}
+
+.align-center {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.cust-margin {
+    margin: 8px;
+}
+
+.col-size-1 { flex: 1; }
+.col-size-2 { flex: 2; }
+.col-size-3 { flex: 3; }
+.col-size-4 { flex: 4; }
+.col-size-5 { flex: 5; }
+.col-size-6 { flex: 6; }
