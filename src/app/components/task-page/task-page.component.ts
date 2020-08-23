@@ -10,6 +10,7 @@ export class TaskPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('ngOnInit TaskPageComponent !!!!');
   }
 
 }

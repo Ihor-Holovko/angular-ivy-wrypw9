@@ -1,26 +1,31 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
-import { AppComponent } from './app.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 import { TaskPageComponent } from './components/task-page/task-page.component';
 
 
-
-// const routes: Routes = []; // sets up routes constant where you define your routes
-
 const routes: Routes = [
   {
+    path: 'home',
+    component: HomePageComponent
+  },
+  {
     path: 'admin',
-    component: TaskPageComponent
+    loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule)
+  },
+  {
+    path: 'front',
+    loadChildren: () => import('./modules/front/front.module').then(m => m.FrontModule),
   },
   {
     path: '',
-    component: AppComponent
+    redirectTo: '/home',
+    pathMatch: 'full'
   }
 ];
 
 @NgModule({
-  declarations: [],
   imports: [
     RouterModule.forRoot(routes),
     CommonModule
