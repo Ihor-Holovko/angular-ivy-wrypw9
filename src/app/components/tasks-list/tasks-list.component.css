@@ -1,0 +1,47 @@
+.task-item {
+    display: flex;
+    width: auto;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    flex-direction: row;
+    padding-left: 8px;
+    justify-content: space-around;
+    height: 40px;
+}
+
+.task-col {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.form-control{
+    outline: none;
+}
+
+input {
+    border: none;
+}
+
+select {
+    border: none;
+}
+
+.item-title {
+    display: flex;
+    width: 50%;
+}
+
+.item-status {
+    display: flex;
+    width: 35%;
+}
+
+.item-button {
+    display: flex;
+    width: 15%;
+}

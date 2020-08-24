@@ -1,0 +1,34 @@
+.input-item {
+    margin: 16px 0;
+    font-size: 16px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.form-control {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    outline: none;
+}
+
+.fixed-container {
+    display: flex;
+    flex-basis: 100vw;
+    height: 90vh;
+    padding: 16px;
+    flex-direction: column;
+}
+
+.bottom-border {
+    border-bottom: 2px dashed gray;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    color: gray;
+}
+
+hr {
+    width: 100%;
+}

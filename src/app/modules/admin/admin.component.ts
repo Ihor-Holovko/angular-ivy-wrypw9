@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators, FormControlName, FormControlDirective} from '@angular/forms';
 import { ITask } from '../../models/ITask';
+import { MainService } from '../../services/main.service';
 
 @Component({
   selector: 'app-admin',
@@ -13,39 +14,32 @@ export class AdminComponent implements OnInit {
   submitted = false;
   tasksArr: ITask[] = [];
 
-  constructor() { }
+  constructor(private servace: MainService) { }
 
   ngOnInit(): void {
-    console.log('ngOnInit AdminComponent');
     this.createForm();
-
     const tmpTaskArr = JSON.parse(localStorage.getItem('tasksArr'));
-
     if (tmpTaskArr) {
       this.tasksArr = tmpTaskArr;
+      this.servace.setTaskArrState(this.tasksArr);
     }
-
   }
 
   createForm(): void {
-
     this.contactForm = new FormGroup({
       'title': new FormControl(this.contact.title, Validators.required),
       'description': new FormControl(this.contact.description, Validators.required),
       'status': new FormControl(this.contact.status, Validators.required),
     });
+    this.contactForm.get('status').setValue('new');
   }
 
   onSubmit(): void {
     this.submitted = true;
-    console.log('this.contactForm:', this.contactForm.value);
     if (this.contactForm.value) {
       this.tasksArr.push(this.contactForm.value);
+      this.servace.setTaskArrState(this.tasksArr);
+      localStorage.setItem('tasksArr', JSON.stringify(this.tasksArr));
     }
-
-    console.log('this.tasksArr:', this.tasksArr);
-
-    localStorage.setItem('tasksArr', JSON.stringify(this.tasksArr));
-
   }
 }

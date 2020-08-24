@@ -1,11 +1,30 @@
-<p>tasks-list works!</p>
 
-<ul>
-    <li *ngFor="let task of tasksArr; trackBy">
-      <div>
-          <p>{{task.title}}</p>
-          <p>{{task.description}}</p>
-          <p>{{task.status}}</p>
-      </div>
-    </li>
-</ul>
+
+
+<div class="row align-center">
+  <div class="task-col">
+    <div *ngFor="let task of tasksArr; index as i" (click)="toFullTask()">
+
+    <!-- <div class="item-title">
+      <b>{{task.title}}</b>
+    </div>
+
+    <div class="item-status">
+      <b>{{task.status}}</b>
+    </div> -->
+
+      <form class="task-item" [formGroup]="taskFormArr[i]" (ngSubmit)="onSubmit(i)" novalidate>
+
+        <input class="item-title" formControlName="title" value="task.title" placeholder="Title" maxlength=25 (input)="changeTitle(i)">
+    
+        <select class="item-status" formControlName="status" value="task.status" (change)="changeStatus(i)">
+          <option value="new">New</option>
+          <option value="in-progress">In Progress</option>
+          <option value="done">Done</option>
+        </select>
+
+      </form>
+
+    </div>
+  </div>
+</div>

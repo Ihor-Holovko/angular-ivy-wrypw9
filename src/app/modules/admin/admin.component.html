@@ -1,42 +1,52 @@
-<div class="container">
-    
-    <div class="row align-center">
-      <div class="col">
-        <h2>admin works!</h2>
-      </div>
+<div class="top-panel">
+  <div class="row ">
+    <div class="col col-size-1 align-center">
+      <button class="btn-rounded" routerLink="/home" routerLinkActive="active">
+        Home
+      </button>
     </div>
 
-    <div class="row align-center">
-      <div class="col">
-        <button  class="btn cust-margin" routerLink="/home" routerLinkActive="active">
-          Home
-        </button>
-      </div>
+    <div class="col col-size-6 align-center">
+      <b>Admin</b>
     </div>
 
-    <div class="row align-center">
-      <div class="col">
-        <form id="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
-          <div class="form-group">
-            <label class="center-block">title:
-              <input class="form-control" formControlName="title">
-            </label>
-            <label class="center-block">description:
-              <input class="form-control" formControlName="description">
-            </label>
-            <label class="center-block">status:
-              <input class="form-control" type="number" formControlName="status">
-            </label>
-          </div>
-          <button type="submit" [disabled]="!contactForm.valid" class="btn cust-margin">Save</button>
-        </form>
-      </div>
-    </div>
+    <div class="col col-size-1 align-center">
 
-    <div class="row align-center">
-      <div class="col">
-        <app-tasks-list [tasksArr]="tasksArr"></app-tasks-list>
-      </div>
     </div>
-
   </div>
+</div>
+
+<div class="container top-padding">
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="row input-item">
+      <input class="form-control" formControlName="title" placeholder="Title" maxlength=25>
+    </div>
+    
+    <div class="row input-item">
+      <textarea class="form-control" type="text" formControlName="description" placeholder="Description" rows="4"
+        cols="50"></textarea>
+    </div>
+
+    <div class="row input-item">
+
+      <select class="form-control" formControlName="status" value="new">
+        <option value="new">New</option>
+        <option value="in-progress">In Progress</option>
+        <option value="done">Done</option>
+      </select>
+
+    </div>
+    <div class="row align-center input-item">
+      <button type="submit" [disabled]="!contactForm.valid" class="btn btn-full">Save</button>
+    </div>
+  </form>
+
+  <div class="row align-center bottom-border">
+    <div class="col">
+      <span class="light-upp-text">Tasks</span>
+    </div>
+  </div>
+
+  <app-tasks-list [tasksArr]="tasksArr"></app-tasks-list>
+
+</div>

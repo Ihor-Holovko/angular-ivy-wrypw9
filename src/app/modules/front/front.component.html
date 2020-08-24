@@ -1,33 +1,23 @@
-
-
-<div class="container">
-
-  <div class="row align-center">
-    <div class="col">
-      <h2>front works!</h2>
-    </div>
-  </div>
-
-  <div class="row align-center">
-    <div class="col">
-      <button  class="btn cust-margin" routerLink="/home" routerLinkActive="active">
+<div class="top-panel">
+  <div class="row ">
+    <div class="col col-size-1 align-center">
+      <button class="btn-rounded" routerLink="/home" routerLinkActive="active">
         Home
       </button>
     </div>
-  </div>
 
-  <div class="row align-center">
-    <div class="col">
-      <app-tasks-list [tasksArr]="tasksArr"></app-tasks-list>
+    <div class="col col-size-6 align-center">
+      <b>Front</b>
+    </div>
+
+    <div class="col col-size-1 align-center">
+
     </div>
   </div>
+</div>
 
-  <div class="row align-center">
-    <div class="col">
-      <button  class="btn cust-margin" routerLink="/front/task">
-        to Task page
-      </button>
-    </div>
-  </div>
+<div class="container top-padding">
 
-  </div>
+  <app-tasks-list [tasksArr]="tasksArr" [canEdit]=false></app-tasks-list>
+
+</div>
