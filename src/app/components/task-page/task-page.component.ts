@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MainService } from 'src/app/services/main.service';
-import { ITask } from 'src/app/models/ITask';
+import { MainService } from '../../services/main.service';
+import { ITask } from '../../models/ITask';
 import { FormControl } from '@angular/forms';
 
 @Component({

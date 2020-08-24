@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ITask } from 'src/app/models/ITask';
+import { ITask } from '../../models/ITask';
 import {FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { Router } from '@angular/router';
-import { MainService } from 'src/app/services/main.service';
+import { MainService } from '../../services/main.service';
 
 @Component({
   selector: 'app-tasks-list',
