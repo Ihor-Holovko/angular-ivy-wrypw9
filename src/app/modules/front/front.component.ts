@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Route } from '@angular/compiler/src/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-front',
@@ -9,10 +7,10 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class FrontComponent implements OnInit {
 
-  constructor( public router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
-    console.log('ngOnInit FrontComponent', this.router);
+    console.log('ngOnInit FrontComponent');
   }
 
 }

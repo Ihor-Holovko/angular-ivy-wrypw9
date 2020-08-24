@@ -7,7 +7,8 @@
   },
   "files": [
     "src/main.ts",
-    "src/polyfills.ts"
+    "src/polyfills.ts",
+    "./src/app/models/ITask.1.ts"
   ],
   "include": [
     "src/**/*.d.ts"

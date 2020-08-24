@@ -6,8 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { SharedModule } from './shared.module';
 
+
 @NgModule({
-  imports:      [ BrowserModule, AppRoutingModule, SharedModule],
+  imports:      [
+    BrowserModule,
+    AppRoutingModule,
+    SharedModule
+  ],
   declarations: [
     AppComponent,
     HomePageComponent,

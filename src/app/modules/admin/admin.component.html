@@ -16,7 +16,26 @@
 
     <div class="row align-center">
       <div class="col">
-        <app-tasks-list></app-tasks-list>
+        <form id="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+          <div class="form-group">
+            <label class="center-block">title:
+              <input class="form-control" formControlName="title">
+            </label>
+            <label class="center-block">description:
+              <input class="form-control" formControlName="description">
+            </label>
+            <label class="center-block">status:
+              <input class="form-control" type="number" formControlName="status">
+            </label>
+          </div>
+          <button type="submit" [disabled]="!contactForm.valid" class="btn cust-margin">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row align-center">
+      <div class="col">
+        <app-tasks-list [tasksArr]="tasksArr"></app-tasks-list>
       </div>
     </div>
 
