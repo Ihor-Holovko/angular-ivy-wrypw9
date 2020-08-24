@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ITask } from 'src/app/models/ITask';
-import {FormControl, FormGroup, Validators, FormControlName, FormControlDirective} from '@angular/forms';
+import {FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { Router } from '@angular/router';
 import { MainService } from 'src/app/services/main.service';
@@ -30,7 +30,6 @@ export class TasksListComponent implements OnInit {
           this.createForm(value);
         });
       }
-
     });
   }
 
@@ -50,8 +49,9 @@ export class TasksListComponent implements OnInit {
     localStorage.setItem('tasksArr', JSON.stringify(this.tasksArr));
   }
 
-  toFullTask(): void {
+  toFullTask(index: number): void {
     if (this.canEdit === false) {
+      this.servace.setTaskIndexState(index);
       this.router.navigate(['/front/task']);
     }
   }

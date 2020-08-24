@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators, FormControlName, FormControlDirective} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { ITask } from '../../models/ITask';
 import { MainService } from '../../services/main.service';
 

@@ -10,9 +10,7 @@
       <b>Admin</b>
     </div>
 
-    <div class="col col-size-1 align-center">
-
-    </div>
+    <div class="col col-size-1 align-center"></div>
   </div>
 </div>
 
@@ -28,14 +26,13 @@
     </div>
 
     <div class="row input-item">
-
       <select class="form-control" formControlName="status" value="new">
         <option value="new">New</option>
         <option value="in-progress">In Progress</option>
         <option value="done">Done</option>
       </select>
-
     </div>
+
     <div class="row align-center input-item">
       <button type="submit" [disabled]="!contactForm.valid" class="btn btn-full">Save</button>
     </div>

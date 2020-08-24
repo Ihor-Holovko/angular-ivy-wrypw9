@@ -10,8 +10,8 @@ const routes: Routes = [
     component: FrontComponent,
   },
   {
-    path: 'task', // child route path
-    component: TaskPageComponent, // child route component that the router renders
+    path: 'task',
+    component: TaskPageComponent,
   }
 ];
 

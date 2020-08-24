@@ -93,6 +93,25 @@ body {
     font-weight: 100;
 }
 
+.form-control {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    outline: none;
+}
+
+input {
+    outline: none;
+}
+
+select {
+    outline: none;
+}
+
+button {
+    outline: none;
+}
 .col-size-1 { flex: 1; }
 .col-size-2 { flex: 2; }
 .col-size-3 { flex: 3; }
