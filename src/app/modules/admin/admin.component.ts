@@ -18,6 +18,13 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
     console.log('ngOnInit AdminComponent');
     this.createForm();
+
+    const tmpTaskArr = JSON.parse(localStorage.getItem('tasksArr'));
+
+    if (tmpTaskArr) {
+      this.tasksArr = tmpTaskArr;
+    }
+
   }
 
   createForm(): void {
@@ -37,6 +44,8 @@ export class AdminComponent implements OnInit {
     }
 
     console.log('this.tasksArr:', this.tasksArr);
+
+    localStorage.setItem('tasksArr', JSON.stringify(this.tasksArr));
 
   }
 }
